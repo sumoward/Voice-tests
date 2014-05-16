@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testData>
+	<requestSettings endOfRecordSet="\r\n\n" />
+	<responseQueue>
+
+		<!-- Core LUT Responses -->
+		<response name="Core: Configuration" endOfRecord="\n"
+			expression="prTaskLUTCoreConfiguration.*">
+			<record data="Vocollect,Operator.Id,0,0," />
+		</response>
+		<response name="Core: Break Types" endOfRecord="\n"
+			expression="prTaskLUTCoreBreakTypes.*">
+			<record data="1,lunch,0," />
+			<record data="2,battery,0," />
+		</response>
+		<response name="Core: Sign On - Pass (Requires password of 123)"
+			endOfRecord="\n" expression="prTaskLUTCoreSignOn.*'123'.*">
+			<record data="0,0," />
+		</response>
+
+		<!-- Selection LUT Responses -->
+
+		<response name="Selection: Region Permissions for Work Type"
+			endOfRecord="\n" expression="prTaskLUTRegionPermissionsForWorkType.*">
+			<record data="777,selection region 1,0," />
+		</response>
+
+		<response name="Selection: Picking Region" endOfRecord="\n"
+			expression="prTaskLUTPickingRegion.*">
+			<record
+				data="777,Region777,1,1,1,1,1,0,1,1,2,1,1,0,0,2,1,,0,0,2,,,,,1,0,,1,1,0," />
+		</response>
+
+		<response name="Selection: Get Assignment" endOfRecord="\n"
+			expression="prTaskLUTGetAssignment.*">
+			<record data="group id,0,group id,Assignment Description,1,0,,00,0,0,0," />
+		</response>
+
+
+		<!-- 1st pick -->
+		<response name="Selection: Get Picks" endOfRecord="\n"
+			expression="prTaskLUTGetPicks.*">
+			<record
+				data="N,0,1,Location ID,0,,A 1,,S 1,5,,ITEM11,0,0.0,0.0,0,321,,,Yoghurt1,,,group id,,,0,,,,0,,,0,0,0,0,0," />
+
+			<!-- <record data="N,0,1,L1,1,,A 1,,S 1,5,,ITEM11,0,0.0,0.0,0,00,,,,,,222,Store 
+				222,0,,store,,0,0,,,0,0,0,0,0," /> <record data="N,0,1,L2,1,,A 1,,S 2,5,,ITEM12,0,0.0,0.0,0,00,,,,,,111,Store 
+				111,0,,store,,0,0,,,0,0,0,0,0," /> <record data="N,0,1,L2,1,,A 2,,S 2,5,,ITEM12,0,0.0,0.0,0,00,,,,,,222,Store 
+				222,0,,store,,0,0,,,0,0,0,0,0," /> <record data="N,0,1,L3,1,,A 2,,S 3,5,,ITEM13,0,0.0,0.0,0,00,,,,,,111,Store 
+				111,0,,store,,0,0,,,0,0,0,0,0," /> <record data="N,0,1,L4,1,,A 2,,S 4,5,,ITEM14,0,0.0,0.0,0,00,,,,,,222,Store 
+				222,0,,store,,0,0,,,0,0,0,0,0," /> -->
+
+		</response>
+
+		<response name="Selection: Get Container" endOfRecord="\n"
+			expression="prTaskLUTContainer.*">
+			<record data=",,,,,,,,0," />
+		</response>
+
+
+		<response name="Selection: Get Container" endOfRecord="\n"
+			expression="prTaskLUTContainer.*">
+			<record data="1,0000000001,test container 1,group id,Store 111,,0,0,0," />
+			<record data="2,0000000002,test container 2,group id,Store 111,,0,0,0," />
+			<record data="3,0000000003,test container 3,group id,Store 111,,0,0,0," />
+		</response>
+
+		<response name="Selection: Print" endOfRecord="\n"
+			expression="prTaskLUTPrint.*">
+			<record data="0," />
+		</response>
+
+
+
+		<response name="Selection: Picked" endOfRecord="\n"
+			expression="prTaskLUTPicked.*">
+			<record data="0," />
+		</response>
+
+		<!-- 2nd pick -->
+		<response name="Selection: Get Picks" endOfRecord="\n"
+			expression="prTaskLUTGetPicks.*">
+			<record
+				data="N,0,1,Location ID,0,,A 1,,S 1,5,,ITEM11,0,0.0,0.0,000,321,,pid1,Yoghurt2,,,group id,,,0,,,,0,,,0,0,0,0,0," />
+		</response>
+
+
+		<response name="Selection: Get Container" endOfRecord="\n"
+			expression="prTaskLUTContainer.*">
+			<record data="1,0000000001,test container 1,group id,Store 111,,0,0,0," />
+			<record data="2,0000000002,test container 2,group id,Store 222,,0,0,0," />
+			<record data="3,0000000003,test container 3,group id,Store 333,,0,0,0," />
+		</response>
+
+
+		<response name="Selection: Get Container" endOfRecord="\n"
+			expression="prTaskLUTContainer.*">
+			<record data="1,0000000001,test container 1,group id,Store 111,,0,0,0," />
+			<record data="2,0000000002,02,group id,Store 222,,0,0,0," />
+		</response>
+
+		<response name="Selection: Print" endOfRecord="\n"
+			expression="prTaskLUTPrint.*">
+			<record data="0," />
+		</response>
+
+
+
+		<response name="Selection: Picked" endOfRecord="\n"
+			expression="prTaskLUTPicked.*">
+			<record data="0," />
+		</response>
+
+
+
+		<!-- no more picks -->
+		<response name="Selection: Get Picks" endOfRecord="\n"
+			expression="prTaskLUTGetPicks.*">
+			<record data=",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0," />
+		</response>
+
+
+		<response name="Selection: Stop Assignment" endOfRecord="\n"
+			expression="prTaskLUTStopAssignment*">
+			<record data="0," />
+		</response>
+
+		<response name="Selection: Print" endOfRecord="\n"
+			expression="prTaskLUTPrint.*">
+			<record data="0," />
+		</response>
+
+		<response name="Selection: Get Container" endOfRecord="\n"
+			expression="prTaskLUTContainer.*">
+			<record data="1,0000000001,test3,111,Store 111,,O,0,0," />
+			<record data="2,0000000002,02,222,Store 222,,O,0,0," />
+		</response>
+
+		<response name="Selection: Update Status" endOfRecord="\n"
+			expression="prTaskLUTUpdateStatus.*">
+			<record data="0," />
+		</response>
+		<response name="Selection: Picked" endOfRecord="\n"
+			expression="prTaskLUTPicked.*">
+			<record data="0," />
+		</response>
+		<response name="Selection: Request Work" endOfRecord="\n"
+			expression="prTaskLUTRequestWork.*">
+			<record data="1234A,0," />
+			<record data="1234B,0," />
+			<record data="1234C,0," />
+			<record data="1234D,0," />
+		</response>
+		<response name="Selection: Deliver Assignment" endOfRecord="\n"
+			expression="prTaskLUTGetDeliveryLocation.*">
+			<record data="Location 1,00,1,1,0,0," />
+		</response>
+		<response name="Selection: Stop Assignment" endOfRecord="\n"
+			expression="prTaskLUTStopAssignment*">
+			<record data="0," />
+		</response>
+		<response name="Selection: Lot Tracking send lot"
+			endOfRecord="\n" expression="prTaskLUTSendLot.*">
+			<record data="1234A, 0," />
+		</response>
+		<response name="Selection: Lot Tracking failed lot"
+			endOfRecord="\n" expression="prTaskLUTFailedLotNumber.*">
+			<record data="0," />
+		</response>
+		<response name="Selection: Lot Tracking valid lots"
+			endOfRecord="\n" expression="prTaskLUTValidLots.*">
+			<record data="1234A, 0," />
+			<record data="1234B, 0," />
+		</response>
+		<response name="Selection: Get Container" endOfRecord="\n"
+			expression="prTaskLUTContainer.*">
+			<record data="1,0000000001,01,111,Store 111,,O,0,0," />
+			<record data="2,0000000002,02,222,Store 222,,O,0,0," />
+		</response>
+		<response name="Selection: Print" endOfRecord="\n"
+			expression="prTaskLUTPrint.*">
+			<record data="0," />
+		</response>
+		<response name="Selection: Verify Location - not replenished"
+			endOfRecord="\n" expression="prTaskLUTVerifyReplenishment.*'L2'.*">
+			<record data="0,0," />
+		</response>
+		<response name="Selection: Verify Location - replenished"
+			endOfRecord="\n" expression="prTaskLUTVerifyReplenishment.*">
+			<record data="1,0," />
+		</response>
+
+	</responseQueue>
+</testData>
